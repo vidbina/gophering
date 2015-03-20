@@ -2,6 +2,15 @@ package main
 
 import "fmt"
 
+func main() {
+	var titanic Ship
+	titanic = Boat{"Titanic"}
+	fmt.Println(titanic.Dock())
+	largeship := &titanic
+	fmt.Println(Boat{"The Black Pearl"}.Dock())
+	//fmt.Println(Aeroplane{"Air Force One"}.Dock())
+}
+
 // a few interfaces
 type Honkable interface {
 	Honk() string
@@ -46,15 +55,6 @@ type Bike interface {
 type Train interface {
 	Driveable
 	Honkable
-}
-
-func main() {
-	var titanic Ship
-	titanic = Boat{"Titanic"}
-	fmt.Println(titanic.Dock())
-	largeship := &titanic
-	fmt.Println(Boat{"The Black Pearl"}.Dock())
-	//fmt.Println(Aeroplane{"Air Force One"}.Dock())
 }
 
 // a few structs
